@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>marko-express</title>
+    <link href="/static/reset.css" rel="stylesheet" type="text/css" media="all">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css" media="all">
+    <link href="/static/style.css" rel="stylesheet" type="text/css" media="all">
+</head>
+<body>
+    <app-header title="marko-express"/>
+
+    <p>
+        <app-hello name="${data.name}"/> You have $data.count new messages!
+    </p>
+
+    <ul if="notEmpty(data.colors)">
+        <li style="color: $color" for="color in data.colors">
+            $color
+        </li>
+    </ul>
+    <div else>
+        No colors!
+    </div>
+
+    <p>
+        <app-button label="Default"/>
+        <app-button label="Primary" variant="primary" size="lg"/>
+        <app-button label="Primary" variant="primary"/>
+        <app-button label="Primary" variant="primary" size="sm"/>
+        <app-button label="Primary" variant="primary" size="xs"/>
+        <app-button label="Success" variant="success"/>
+        <app-button label="Info" variant="info"/>
+        <app-button label="Warning" variant="warning"/>
+        <app-button label="Danger" variant="danger"/>
+        <app-button label="Link" variant="link"/>
+    </p>
+
+    <include template="./footer.marko"/>
+
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+    <!--
+    Page will automatically refresh any time a template is modified
+    if launched using the browser-refresh Node.js process launcher:
+    https://github.com/patrick-steele-idem/browser-refresh
+    -->
+    <browser-refresh/>
+</body>
+</html>

@@ -1,0 +1,25 @@
+{
+  "name": "marko-express",
+  "version": "0.0.0",
+  "description": "Sample Express-based server app that integrates the marko module for rendering a view",
+  "main": "./server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/marko-js-samples/marko-express.git"
+  },
+  "author": "Patrick Steele-idem <pnidem@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/raptorjs/raptor-samples/issues"
+  },
+  "homepage": "https://github.com/marko-js-samples/marko-express",
+  "dependencies": {
+    "browser-refresh-taglib": "^1.0.3",
+    "express": "^4.9.4",
+    "marko": "^2.7.7",
+    "serve-static": "^1.6.2"
+  }
+}
