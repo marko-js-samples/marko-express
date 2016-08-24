@@ -19,7 +19,7 @@
   "dependencies": {
     "browser-refresh-taglib": "^1.0.3",
     "express": "^4.9.4",
-    "marko": "^2.7.7",
+    "marko": "^3.0.3",
     "serve-static": "^1.6.2"
   }
 }

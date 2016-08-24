@@ -1,21 +1,16 @@
-<def function="body">
-    <if test="data.label">
-        ${data.label}
-    </if>
-    <else-if test="data.renderBody">
-        <invoke function="data.renderBody(out)"/>
-    </else>
-
-    <if test="data.isDropdown">
-        &nbsp;
-        <span class="caret"></span>$
-    </if>
-</def>
-
-<a href="${data.href}" attrs="data.rootAttrs" if="data.type === 'link'">
-    <invoke function="body()"/>
+<macro body()>
+    <if(data.label)>${data.label}</if>
+    <else-if(data.renderBody)>
+        <invoke data.renderBody(out)/>
+        <if(data.isDropdown)>
+            &nbsp;
+            <span class="caret"/>$
+        </if>
+    </else-if>
+</macro>
+<a href=data.href ${data.rootAttrs} if(data.type === "link")>
+    <body/>
 </a>
-<button attrs="data.rootAttrs" else>
-    <invoke function="body()"/>
+<button ${data.rootAttrs} else>
+    <body/>
 </button>
-

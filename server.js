@@ -1,6 +1,5 @@
 require('marko/node-require').install();
-
-require('marko/browser-refresh').enable();
+require('marko/express'); //enable res.marko
 
 var express = require('express');
 var serveStatic = require('serve-static');
@@ -12,11 +11,11 @@ var port = 8080;
 app.use('/static', serveStatic(__dirname + '/static'));
 
 app.get('/', function(req, res) {
-    indexTemplate.render({
+    res.marko(indexTemplate, {
             name: 'Frank',
             count: 30,
             colors: ['red', 'green', 'blue']
-        }, res);
+        });
 });
 
 app.listen(port, function() {
