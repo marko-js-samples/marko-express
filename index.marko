@@ -16,7 +16,7 @@
             <app-hello name=data.name/>
             You have ${data.count} new messages!
         </p>
-        <ul if(notEmpty(data.colors))>
+        <ul if(data.colors && data.colors.length)>
             <li style="color: ${color}" for(color in data.colors)>${color}</li>
         </ul>
         <div else>No colors!</div>

@@ -11,15 +11,15 @@
     "url": "https://github.com/marko-js-samples/marko-express.git"
   },
   "author": "Patrick Steele-idem <pnidem@gmail.com>",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/raptorjs/raptor-samples/issues"
+    "url": "https://github.com/marko-js-samples/marko-express/issues"
   },
   "homepage": "https://github.com/marko-js-samples/marko-express",
   "dependencies": {
     "browser-refresh-taglib": "^1.0.3",
     "express": "^4.9.4",
-    "marko": "^3.0.3",
+    "marko": "^4.3.0",
     "serve-static": "^1.6.2"
   }
 }

@@ -1,16 +1,16 @@
 <macro body()>
-    <if(data.label)>${data.label}</if>
-    <else-if(data.renderBody)>
-        <invoke data.renderBody(out)/>
-        <if(data.isDropdown)>
+    <if(input.label)>${input.label}</if>
+    <else-if(input.renderBody)>
+      <include(input.renderBody)/>
+      <if(input.isDropdown)>
             &nbsp;
             <span class="caret"/>$
         </if>
     </else-if>
 </macro>
-<a href=data.href ${data.rootAttrs} if(data.type === "link")>
+<a href=input.href ${input.rootAttrs} if(input.type === "link")>
     <body/>
 </a>
-<button ${data.rootAttrs} else>
+<button ${input.rootAttrs} else>
     <body/>
 </button>
