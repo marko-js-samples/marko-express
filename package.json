@@ -19,7 +19,8 @@
   "dependencies": {
     "browser-refresh-taglib": "^1.0.3",
     "express": "^4.9.4",
-    "marko": "^4.3.0",
-    "serve-static": "^1.6.2"
+    "lasso": "^2.11.16",
+    "lasso-marko": "^2.3.0",
+    "marko": "^4.5.0-beta.3"
   }
 }
