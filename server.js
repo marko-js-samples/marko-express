@@ -1,13 +1,12 @@
-require('marko/node-require').install();
-require('marko/express'); //enable res.marko
+require('marko/node-require');
 
-var express = require('express');
+const express = require('express');
+const markoPress = require('marko/express'); //enable res.marko
+const lassoWare = require('lasso/middleware');
+const indexTemplate = require('./index.marko');
 
-var indexTemplate = require('./index.marko');
-var app = express();
-var port = 8080;
-
-var isProduction = process.env.NODE_ENV === 'production';
+const port = 8080;
+const isProduction = (process.env.NODE_ENV === 'production');
 
 // Configure lasso to control how JS/CSS/etc. is delivered to the browser
 require('lasso').configure({
@@ -20,18 +19,19 @@ require('lasso').configure({
     fingerprintsEnabled: isProduction, // Only add fingerprints to URLs in production
 });
 
+const app = express();
+app.use(markoPress());
+app.use(lassoWare.serveStatic());
 
-app.use(require('lasso/middleware').serveStatic());
-
-app.get('/', function(req, res) {
+app.get('/', function (req, res) {
     res.marko(indexTemplate, {
-            name: 'Frank',
-            count: 30,
-            colors: ['red', 'green', 'blue']
-        });
+        name: 'Frank',
+        count: 30,
+        colors: ['red', 'green', 'blue']
+    });
 });
 
-app.listen(port, function() {
+app.listen(port, function () {
     console.log('Server started! Try it out:\nhttp://localhost:' + port + '/');
 
     if (process.send) {
